@@ -1,0 +1,145 @@
+/* Inherit base Elementor styles from previous sections (e.g., .elementor-section, .elementor-container, .elementor-column) */
+
+/* Specific to Fifth Section */
+.elementor-section.elementor-element-e4413b3 {
+    padding: 80px 0; /* Adjust overall section padding */
+}
+
+/* Column styles (similar to FourthSection, but with specific padding/alignment if needed) */
+.elementor-section.elementor-element-e4413b3 .elementor-col-50 {
+    width: 50%;
+}
+
+/* Left Column Content Alignment */
+.elementor-section.elementor-element-e4413b3 .elementor-column.elementor-element-bc0a171 .elementor-widget-wrap {
+    padding: 20px 40px 20px 20px; /* Example: more padding on right for gap with image */
+    align-items: flex-start;
+    text-align: left;
+}
+.elementor-section.elementor-element-e4413b3 .elementor-column.elementor-element-bc0a171 .elementor-widget-wrap .elementor-heading-title,
+.elementor-section.elementor-element-e4413b3 .elementor-column.elementor-element-bc0a171 .elementor-widget-wrap p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Right Column Image Positioning */
+.elementor-section.elementor-element-e4413b3 .elementor-column.elementor-element-33ac011 .elementor-widget-wrap {
+    padding: 20px 20px 20px 40px; /* Example: more padding on left for gap with text */
+    /* Images inside this column are not necessarily centered */
+    align-items: flex-start; /* Align images to the start of the flex container */
+}
+
+/* Specific Image Styling for Left Column (static image) */
+.elementor-section.elementor-element-e4413b3 .elementor-element-ec7a626 {
+    margin-bottom: 30px; /* Space below this image */
+}
+.elementor-section.elementor-element-e4413b3 .elementor-element-ec7a626 .elementor-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styling for H6 Heading */
+.elementor-heading-title.elementor-size-default {
+    /* Base styles for h2, h6. Adjust specific element-id for unique sizes */
+}
+.elementor-element-0475d84 .elementor-heading-title,
+.elementor-element-e6ee73b .elementor-heading-title {
+    font-size: 1rem; /* Example size for H6 */
+    font-weight: 500;
+    color: #666; /* Lighter color for H6 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Styling for H2 Heading */
+.elementor-element-9d07a87 .elementor-heading-title,
+.elementor-element-d40c660 .elementor-heading-title {
+    font-size: 2.8rem; /* Adjust as per site inspection */
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Specific Button Styling for this section */
+.elementor-element-7754be9 .elementor-button {
+    background-color: #000; /* Assuming primary button style */
+    color: #fff;
+    border-radius: 25px; /* Consistent with other buttons */
+    padding: 10px 20px;
+}
+.elementor-element-7754be9 .elementor-button:hover {
+    opacity: 0.8;
+}
+
+/* Specific Image Styling for Right Column */
+.elementor-section.elementor-element-e4413b3 .elementor-column.elementor-element-33ac011 .elementor-image img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+/* Elementor Hidden Mobile */
+/* This is a utility class often used by Elementor to hide elements on mobile */
+.elementor-hidden-mobile {
+  display: block; /* Default to visible */
+}
+@media (max-width: 767px) {
+  .elementor-hidden-mobile {
+    display: none !important; /* Hide on mobile */
+  }
+}
+
+/* Positioning of images in the right column to replicate overlaps/offsets */
+/* These values are highly dependent on the original site's exact layout */
+.elementor-element-7a5e4b7 { /* Image with rotation */
+    position: relative; /* Make it a positioning context */
+    z-index: 2; /* Bring to front if overlapping */
+    max-width: 70%; /* Example width, adjust as needed */
+    margin-left: auto; /* Push to right, if content to its left */
+    margin-right: 0;
+    margin-bottom: -50px; /* Example: pull it up to overlap the next image */
+    /* The transform: rotateZ(-8deg) is applied inline via React style */
+}
+
+.elementor-element-73a3a29 { /* Image with negative translateY */
+    position: relative;
+    z-index: 1; /* Behind the rotating image */
+    max-width: 80%; /* Example width */
+    margin-left: auto; /* Or adjust to position it precisely */
+    margin-right: auto;
+    /* The translateY is applied inline via React style from the hook */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .elementor-section.elementor-element-e4413b3 {
+    padding: 40px 0;
+  }
+  .elementor-section.elementor-element-e4413b3 .elementor-container {
+    flex-direction: column; /* Stack columns on mobile */
+  }
+  .elementor-section.elementor-element-e4413b3 .elementor-col-50 {
+    width: 100%; /* Full width on mobile */
+  }
+  .elementor-section.elementor-element-e4413b3 .elementor-column .elementor-widget-wrap {
+    padding: 20px 15px; /* Adjust padding for mobile columns */
+    align-items: center; /* Center content on mobile */
+    text-align: center;
+  }
+  .elementor-section.elementor-element-e4413b3 .elementor-column .elementor-widget-wrap .elementor-heading-title,
+  .elementor-section.elementor-element-e4413b3 .elementor-column .elementor-widget-wrap p {
+      text-align: center;
+  }
+  .elementor-element-7a5e4b7 {
+      margin-bottom: 20px; /* Less overlap on mobile */
+      max-width: 90%; /* Wider on mobile */
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .elementor-element-73a3a29 {
+      max-width: 90%; /* Wider on mobile */
+  }
+}

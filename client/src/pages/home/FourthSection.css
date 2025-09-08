@@ -1,0 +1,76 @@
+/* Inherited base styles from previous section are important */
+/* (e.g., .elementor-section, .elementor-container, .elementor-column) */
+
+/* Specific to this section */
+.elementor-section.elementor-element-1a153f4 {
+  padding: 80px 0; /* Example padding for the section */
+}
+
+/* For 50% columns, ensure they take half the width */
+.elementor-col-50 {
+  width: 50%;
+}
+
+/* Ensure images in these columns are responsive and centered if needed */
+.elementor-column .elementor-image img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Important for alignment */
+  margin: 0 auto; /* Center image within its space */
+}
+
+/* Adjust padding/margins for widgets within columns */
+.elementor-column .elementor-widget-wrap {
+  padding: 20px; /* Padding inside each column's widget wrap */
+  align-items: flex-start; /* Align text content to the left by default in columns */
+  text-align: left; /* Text alignment for text within this column */
+}
+
+.elementor-column .elementor-widget-wrap .elementor-heading-title,
+.elementor-column .elementor-widget-wrap p {
+  text-align: left; /* Override parent center for text */
+  margin-bottom: 10px; /* Spacing for text elements */
+}
+
+/* Heading style */
+.elementor-element-903d8ef .elementor-heading-title {
+  font-size: 2.5rem; /* Adjust as per actual site inspection */
+  font-weight: 700;
+  color: #333;
+}
+
+/* Spacer Widget */
+.elementor-spacer {
+  height: 20px; /* Default height for spacers */
+  width: 100%;
+}
+.elementor-spacer-inner {
+  height: 100%; /* The actual visible spacer element */
+}
+
+/* Motion effects base styles */
+.elementor-motion-effects-parent {
+  position: relative; /* Needed for child absolute positioning or z-index context */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .elementor-section.elementor-element-1a153f4 {
+    padding: 40px 0;
+  }
+  .elementor-container {
+    flex-direction: column; /* Stack columns on mobile */
+  }
+  .elementor-col-50 {
+    width: 100%; /* Full width on mobile */
+  }
+  .elementor-column .elementor-widget-wrap {
+    padding: 20px 15px; /* Adjust padding for mobile columns */
+    align-items: center; /* Center content on mobile */
+    text-align: center;
+  }
+  .elementor-column .elementor-widget-wrap .elementor-heading-title,
+  .elementor-column .elementor-widget-wrap p {
+      text-align: center;
+  }
+}

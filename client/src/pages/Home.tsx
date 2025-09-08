@@ -1,5 +1,9 @@
 import HeroSection from "@/components/HeroSection";
 import { Scissors, Palette, Sparkles, Hand, Eye, Heart } from "lucide-react";
+import SecondSection from "./home/SecondSection";
+import ThirdSection from "./home/ThirdSection";
+import FourthSection from "./home/FourthSection";
+import FifhtSection from "./home/FifthSection";
 
 const services = [
   {
@@ -62,6 +66,12 @@ export default function Home() {
   return (
     <div className="pt-16">
       <HeroSection />
+
+      <SecondSection /> {/* your new section here */}
+      <ThirdSection />
+      <FourthSection />
+      <FifhtSection />
+
       
       {/* Services Section */}
       <section className="py-20 bg-light-pink">

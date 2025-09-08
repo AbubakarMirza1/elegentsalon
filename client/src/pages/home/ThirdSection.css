@@ -1,0 +1,64 @@
+/* Basic Elementor-like containers (from previous section) */
+.elementor-section {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.elementor-container {
+  display: flex;
+  width: 100%;
+}
+
+.elementor-column {
+  flex-basis: 0;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.elementor-col-100 {
+  width: 100%;
+}
+
+.elementor-widget-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack items */
+  align-items: center; /* Center horizontally */
+  box-sizing: border-box;
+  padding: 50px 0; /* Add some vertical padding for the section */
+}
+
+/* Image Widget Styling */
+.elementor-widget-image {
+  margin: 0 auto; /* Center the image within its available space */
+  max-width: 100%; /* Ensure image widget doesn't overflow */
+}
+
+.elementor-image {
+  line-height: 0; /* Remove extra space below images */
+}
+
+.elementor-image img {
+  display: block; /* Remove extra space below images */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Motion effects specific styles (if any static ones are needed) */
+/* The dynamic `transform` will be applied via React `style` prop */
+.elementor-motion-effects-element {
+  will-change: transform; /* Hint to browser for animation performance */
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .elementor-widget-wrap {
+    padding: 30px 15px;
+  }
+}

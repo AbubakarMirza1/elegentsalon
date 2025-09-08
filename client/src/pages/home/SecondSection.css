@@ -1,0 +1,197 @@
+/* General Elementor-like Reset/Base Styles */
+.elementor-section {
+  position: relative;
+  display: flex; /* For aligning content within the section */
+  width: 100%;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container {
+  max-width: 1140px; /* Common Elementor container width */
+  margin: 0 auto;
+}
+
+.elementor-container {
+  display: flex;
+  width: 100%;
+}
+
+.elementor-column {
+  flex-basis: 0;
+  flex-grow: 1;
+  width: 100%; /* Default for single column */
+}
+
+.elementor-col-100 {
+  width: 100%;
+}
+
+.elementor-widget-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack widgets vertically */
+  align-items: center; /* Center content horizontally within the column */
+  padding: 60px 20px; /* Your original padding */
+  box-sizing: border-box; /* Ensures padding doesn't push content out */
+}
+
+/* Image Widget Styling */
+.elementor-widget-image {
+  margin-bottom: 20px; /* Space below image */
+  text-align: center; /* Ensure image itself is centered if smaller than its container */
+}
+
+.elementor-image img {
+  vertical-align: middle; /* Removes extra space below inline images */
+  max-width: 100%; /* Responsive image */
+  height: auto;
+}
+
+/* Heading Widget Styling */
+.elementor-widget-heading {
+  margin-bottom: 10px; /* Space below heading */
+  text-align: center;
+}
+
+.elementor-heading-title {
+  font-size: 2rem; /* Your original font size */
+  line-height: 1.2;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-weight: 600; /* Common for headings */
+  color: #333; /* Example color */
+}
+
+/* Text Editor Widget Styling */
+.elementor-widget-text-editor {
+  margin-bottom: 20px; /* Space below paragraph */
+  text-align: center;
+  max-width: 600px; /* To prevent text from being too wide on large screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.elementor-widget-text-editor p {
+  font-size: 1.1rem; /* Your original font size */
+  line-height: 1.6;
+  color: #444; /* Your original color */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* Button Widgets Styling */
+.elementor-widget-button {
+  margin-bottom: 15px; /* Space between buttons and other elements */
+}
+
+.elementor-widget-button:last-of-type {
+    margin-bottom: 0; /* No margin after the last button widget */
+}
+
+/* To arrange buttons horizontally, we need a parent container or adjust display */
+/* For Elementor, buttons are often in separate widget divs, so we need to target them */
+.elementor-widget-wrap > .elementor-widget-button {
+  display: inline-block; /* Make buttons arrange horizontally */
+  margin: 0 7.5px 15px; /* Half of your original 15px gap on each side */
+}
+
+.elementor-button {
+  display: inline-flex; /* Use flex for internal content alignment */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 0.9em; /* Adjust as needed */
+  font-weight: 500;
+  line-height: 1; /* Helps vertical alignment */
+  cursor: pointer;
+}
+
+.elementor-button-content-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.elementor-button-text {
+  display: block; /* Ensures text takes up full space */
+  line-height: 1; /* Helps vertical alignment */
+}
+
+/* Specific button styles (assuming these are default Elementor colors or similar) */
+/* This part might need more inspection from the original site's computed styles for colors */
+.vamtam-btn-text {
+    /* Base styles for button text */
+    color: inherit; /* Inherit color from parent anchor */
+}
+
+/* For the "Book an appointment" button (primary-like) */
+/* Elementor often uses a global accent color for primary buttons */
+.elementor-element-a9c179e .elementor-button {
+  background-color: #000; /* Similar to your .btn.primary */
+  color: #fff;
+}
+
+.elementor-element-a9c179e .elementor-button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+}
+
+
+/* For the "Location & Hours" button (secondary-like) */
+.elementor-element-31fbb3b .elementor-button {
+  background-color: transparent;
+  border: 1px solid #000; /* Similar to your .btn.secondary */
+  color: #000;
+}
+
+.elementor-element-31fbb3b .elementor-button:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Light hover effect */
+  color: #000;
+}
+
+/* Vamtam Underline Animation (simplified) */
+/* You'll need to inspect the original site's CSS for the exact animation. */
+/* This is a placeholder for the underline effect often seen in Elementor/themes. */
+.vamtam-has-underline-anim .elementor-button-text .vamtam-btn-text {
+  position: relative;
+}
+.vamtam-has-underline-anim .elementor-button-text .vamtam-btn-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust based on desired gap */
+  width: 100%;
+  height: 1px;
+  background-color: currentColor; /* Matches text color */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+.vamtam-has-underline-anim .elementor-button:hover .elementor-button-text .vamtam-btn-text::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* Responsive Adjustments (Elementor often uses these breakpoints) */
+@media (max-width: 767px) {
+  .elementor-widget-wrap {
+    padding: 40px 15px; /* Less padding on smaller screens */
+  }
+
+  .elementor-heading-title {
+    font-size: 1.5rem;
+  }
+
+  .elementor-widget-text-editor p {
+    font-size: 1rem;
+  }
+
+  .elementor-widget-wrap > .elementor-widget-button {
+    display: block; /* Stack buttons on very small screens */
+    margin: 0 auto 15px; /* Center and add vertical space */
+    width: fit-content; /* Ensure button doesn't stretch full width */
+  }
+  .elementor-widget-button:last-of-type {
+      margin-bottom: 0;
+  }
+}
